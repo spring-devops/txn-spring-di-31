@@ -29,10 +29,9 @@ public class TxnSpringDi31Application {
 		SetterInjectedController setterInjectedController = (SetterInjectedController) ctx.getBean("setterInjectedController");
 		System.out.println("TxnSpringDi31Application >>>> " + setterInjectedController.getGreeting());
 
-		/*
 		System.out.println("TxnSpringDi31Application >>>> ----------- Constructor ");
 		ConstructorInjectedController constructorInjectedController = (ConstructorInjectedController) ctx.getBean("constructorInjectedController");
-		System.out.println("TxnSpringDi31Application >>>> " + constructorInjectedController.getGreeting());*/
+		System.out.println("TxnSpringDi31Application >>>> " + constructorInjectedController.getGreeting());
 	}
 
 }
