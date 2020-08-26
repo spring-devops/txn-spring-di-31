@@ -4,6 +4,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
 import testapps.springframework.txnspringdi31.controllers.*;
+import testapps.springframework.txnspringdi31.services.PetService;
 
 @SpringBootApplication
 public class TxnSpringDi31Application {
@@ -33,6 +34,10 @@ public class TxnSpringDi31Application {
 		System.out.println("TxnSpringDi31Application >>>> ----------- I18nProfileTest ");
 		I18nController i18nController = (I18nController) ctx.getBean("i18nController");
 		System.out.println("TxnSpringDi31Application >>>> " + i18nController.sayHello());
+
+		System.out.println("TxnSpringDi31Application >>>> ----------- Which Pet is the best?");
+		PetController petController = (PetController) ctx.getBean("petController");
+		System.out.println("TxnSpringDi31Application >>>> " + petController.whichPetIsTheBest());
 	}
 
 }
