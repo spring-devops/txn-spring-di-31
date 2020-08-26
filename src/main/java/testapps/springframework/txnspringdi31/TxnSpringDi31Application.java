@@ -24,10 +24,12 @@ public class TxnSpringDi31Application {
 		System.out.println("TxnSpringDi31Application >>>> ----------- Property ");
 		PropertyInjectedController propertyInjectedController = (PropertyInjectedController) ctx.getBean("propertyInjectedController");
 		System.out.println("TxnSpringDi31Application >>>> " + propertyInjectedController.getGreeting());
-		/*
+
 		System.out.println("TxnSpringDi31Application >>>> ----------- Setter ");
 		SetterInjectedController setterInjectedController = (SetterInjectedController) ctx.getBean("setterInjectedController");
 		System.out.println("TxnSpringDi31Application >>>> " + setterInjectedController.getGreeting());
+
+		/*
 		System.out.println("TxnSpringDi31Application >>>> ----------- Constructor ");
 		ConstructorInjectedController constructorInjectedController = (ConstructorInjectedController) ctx.getBean("constructorInjectedController");
 		System.out.println("TxnSpringDi31Application >>>> " + constructorInjectedController.getGreeting());*/
