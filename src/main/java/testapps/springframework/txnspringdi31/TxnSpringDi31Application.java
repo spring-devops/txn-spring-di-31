@@ -3,10 +3,7 @@ package testapps.springframework.txnspringdi31;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
-import testapps.springframework.txnspringdi31.controllers.ConstructorInjectedController;
-import testapps.springframework.txnspringdi31.controllers.MyController;
-import testapps.springframework.txnspringdi31.controllers.PropertyInjectedController;
-import testapps.springframework.txnspringdi31.controllers.SetterInjectedController;
+import testapps.springframework.txnspringdi31.controllers.*;
 
 @SpringBootApplication
 public class TxnSpringDi31Application {
@@ -32,6 +29,10 @@ public class TxnSpringDi31Application {
 		System.out.println("TxnSpringDi31Application >>>> ----------- Constructor ");
 		ConstructorInjectedController constructorInjectedController = (ConstructorInjectedController) ctx.getBean("constructorInjectedController");
 		System.out.println("TxnSpringDi31Application >>>> " + constructorInjectedController.getGreeting());
+
+		System.out.println("TxnSpringDi31Application >>>> ----------- I18nProfileTest ");
+		I18nController i18nController = (I18nController) ctx.getBean("i18nController");
+		System.out.println("TxnSpringDi31Application >>>> " + i18nController.sayHello());
 	}
 
 }
