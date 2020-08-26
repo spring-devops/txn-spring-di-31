@@ -9,7 +9,7 @@ public class ConstructorInjectedController {
     private final GreetingService greetingService;
 
     //Constructor based AUTOWIRED is not needed since Spring 4.2 It is OPTIONAL now, never needed. If present, it does not do anything extra
-    public ConstructorInjectedController(@Qualifier("constructorInjectedGreetingService") GreetingService greetingService) {
+    public ConstructorInjectedController(GreetingService greetingService) {
         this.greetingService = greetingService;
     }
 
