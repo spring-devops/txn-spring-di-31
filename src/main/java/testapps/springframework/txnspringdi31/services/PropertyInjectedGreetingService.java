@@ -3,9 +3,9 @@ package testapps.springframework.txnspringdi31.services;
 import org.springframework.stereotype.Service;
 
 @Service
-public class PorpertyInjectedGreetingService implements GreetingService{
+public class PropertyInjectedGreetingService implements GreetingService{
     @Override
     public String sayGreeting() {
-        return "PorpertyInjectedGreetingService --> Hello World!";
+        return "PropertyInjectedGreetingService --> Hello World!";
     }
 }
