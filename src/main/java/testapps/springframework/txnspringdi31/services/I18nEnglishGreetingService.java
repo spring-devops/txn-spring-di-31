@@ -3,7 +3,7 @@ package testapps.springframework.txnspringdi31.services;
 import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
 
-@Profile("ES")
+@Profile("EN")
 @Service("I18nService")
 public class I18nEnglishGreetingService implements GreetingService{
     @Override
