@@ -1,8 +1,8 @@
-package testapps.springframework.txnspringdi31.controllers.greetings;
+package testapps.springframework.txnspringdi31.controllers.injection;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import testapps.springframework.txnspringdi31.controllers.greetings.SetterInjectedController;
+import testapps.springframework.txnspringdi31.controllers.injection.SetterInjectedController;
 import testapps.springframework.txnspringdi31.services.greetingsexample.GreetingServiceImpl;
 
 class SetterInjectedControllerTest {

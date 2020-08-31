@@ -1,14 +1,22 @@
 package testapps.springframework.txnspringdi31.services.greetingsexample;
 
+import org.springframework.context.annotation.Primary;
 import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
-import testapps.springframework.txnspringdi31.services.greetingsexample.GreetingService;
 
-@Profile("ES")
-@Service("I18nService")
+@Primary
+@Service
+@Profile("es")
 public class I18nSpanishGreetingService implements GreetingService {
+
+    private final GreetingRepository greetingRepository;
+
+    public I18nSpanishGreetingService(GreetingRepository greetingRepository) {
+        this.greetingRepository = greetingRepository;
+    }
+
     @Override
     public String sayGreeting() {
-        return "I18nSpanishGreetingService --> Hola Mudo S(ES)!";
+        return "I18nSpanishGreetingService --> " + greetingRepository.getSpanishGreeting();
     }
 }

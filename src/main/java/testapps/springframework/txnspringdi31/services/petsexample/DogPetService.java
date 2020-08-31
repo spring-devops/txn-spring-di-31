@@ -5,8 +5,8 @@ import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
 
 @Profile("PD")
-@Primary
 @Service("dogs")
+@Primary
 public class DogPetService implements PetService {
     @Override
     public String getPetType() {

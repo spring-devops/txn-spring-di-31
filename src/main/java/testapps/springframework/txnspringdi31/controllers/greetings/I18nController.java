@@ -6,13 +6,13 @@ import testapps.springframework.txnspringdi31.services.greetingsexample.Greeting
 
 @Controller
 public class I18nController {
-    private final GreetingService greetingService;
+     private final GreetingService greetingService;
 
-    public I18nController(@Qualifier("I18nService") GreetingService greetingService) {
+    public I18nController(GreetingService greetingService) {
         this.greetingService = greetingService;
     }
 
     public String sayHello() {
-        return greetingService.sayGreeting();
+        return "I18nController >>>>> " + greetingService.sayGreeting();
     }
 }

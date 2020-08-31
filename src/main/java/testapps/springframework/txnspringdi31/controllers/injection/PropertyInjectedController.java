@@ -1,4 +1,4 @@
-package testapps.springframework.txnspringdi31.controllers.greetings;
+package testapps.springframework.txnspringdi31.controllers.injection;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
