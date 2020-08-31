@@ -1,8 +1,7 @@
-package testapps.springframework.txnspringdi31.controllers;
+package testapps.springframework.txnspringdi31.controllers.greetings;
 
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
-import testapps.springframework.txnspringdi31.services.GreetingService;
+import testapps.springframework.txnspringdi31.services.greetingsexample.GreetingService;
 
 @Controller
 public class ConstructorInjectedController {

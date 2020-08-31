@@ -1,8 +1,9 @@
-package testapps.springframework.txnspringdi31.services;
+package testapps.springframework.txnspringdi31.services.lifecycleexample;
 
 import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.config.BeanPostProcessor;
 import org.springframework.stereotype.Component;
+import testapps.springframework.txnspringdi31.services.lifecycleexample.LifeCycleDemoBean;
 
 @Component
 public class CustomBeanPostProcessor implements BeanPostProcessor {

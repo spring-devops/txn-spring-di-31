@@ -1,4 +1,4 @@
-package testapps.springframework.txnspringdi31.services;
+package testapps.springframework.txnspringdi31.services.greetingsexample;
 
 import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Service;

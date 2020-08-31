@@ -1,7 +1,7 @@
-package testapps.springframework.txnspringdi31.controllers;
+package testapps.springframework.txnspringdi31.controllers.pets;
 
 import org.springframework.stereotype.Controller;
-import testapps.springframework.txnspringdi31.services.PetService;
+import testapps.springframework.txnspringdi31.services.petsexample.PetService;
 
 @Controller
 public class PetController {

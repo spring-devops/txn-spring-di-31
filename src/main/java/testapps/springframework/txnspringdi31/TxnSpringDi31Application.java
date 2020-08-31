@@ -4,7 +4,11 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
 import testapps.springframework.txnspringdi31.controllers.*;
-import testapps.springframework.txnspringdi31.services.PetService;
+import testapps.springframework.txnspringdi31.controllers.greetings.ConstructorInjectedController;
+import testapps.springframework.txnspringdi31.controllers.greetings.I18nController;
+import testapps.springframework.txnspringdi31.controllers.greetings.PropertyInjectedController;
+import testapps.springframework.txnspringdi31.controllers.greetings.SetterInjectedController;
+import testapps.springframework.txnspringdi31.controllers.pets.PetController;
 
 @SpringBootApplication
 public class TxnSpringDi31Application {
