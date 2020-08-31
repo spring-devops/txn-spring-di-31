@@ -3,9 +3,10 @@ package testapps.springframework.txnspringdi31;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.ComponentScan;
 import testapps.springframework.txnspringdi31.controllers.*;
-import testapps.springframework.txnspringdi31.services.PetService;
 
+@ComponentScan({"some.other.example.pakkage","testapps.springframework.txnspringdi31"})
 @SpringBootApplication
 public class TxnSpringDi31Application {
 

@@ -1,4 +1,4 @@
-package testapps.springframework.txnspringdi31.services;
+package some.other.example.pakkage.services;
 
 import org.springframework.stereotype.Service;
 
