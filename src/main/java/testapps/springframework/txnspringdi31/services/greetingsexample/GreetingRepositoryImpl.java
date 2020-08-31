@@ -10,12 +10,12 @@ public class GreetingRepositoryImpl implements GreetingRepository {
     }
 
     @Override
-    public String getGermanGreeting() {
+    public String getSpanishGreeting() {
         return "GreetingRepositoryImpl >>> Servicio de Saludo Primario";
     }
 
     @Override
-    public String getSpanishGreeting() {
+    public String getGermanGreeting() {
         return "GreetingRepositoryImpl >>> Primärer Grußdienst";
     }
 }

@@ -30,37 +30,37 @@ public class LifeCycleDemoBean implements InitializingBean, DisposableBean, Bean
 
     @Override
     public void setBeanFactory(BeanFactory beanFactory) throws BeansException {
-        //System.out.println(getFormattedMessafe("OVERRIDE: Bean Factory has been set"));
+        System.out.println(getFormattedMessafe("OVERRIDE: Bean Factory has been set"));
     }
 
     @Override
     public void setBeanName(String name) {
-        //System.out.println(getFormattedMessafe("OVERRIDE: In Set Bean Name -> " + name));
+        System.out.println(getFormattedMessafe("OVERRIDE: In Set Bean Name -> " + name));
     }
 
     @Override
     public void afterPropertiesSet() throws Exception {
-        //System.out.println(getFormattedMessafe("OVERRIDE: In After Properties Set"));
+        System.out.println(getFormattedMessafe("OVERRIDE: In After Properties Set"));
     }
 
     @Override
     public void destroy() throws Exception {
-        //System.out.println(getFormattedMessafe("OVERRIDE: In Destroy"));
+        System.out.println(getFormattedMessafe("OVERRIDE: In Destroy"));
     }
 
     @Override
     public void setApplicationContext(ApplicationContext applicationContext) throws BeansException {
-        //System.out.println(getFormattedMessafe("OVERRIDE: In Set Application Context"));
+        System.out.println(getFormattedMessafe("OVERRIDE: In Set Application Context"));
     }
 
     @PostConstruct
     public void postConstruct() {
-        /*System.out.println(getFormattedMessafe("ANNOTATED: In Post Construct"));*/
+        System.out.println(getFormattedMessafe("ANNOTATED: In Post Construct"));
     }
 
     @PreDestroy
     public void preDestroy() {
-        /*System.out.println(getFormattedMessafe("ANNOTATED: In Pre-Destroy"));*/
+        System.out.println(getFormattedMessafe("ANNOTATED: In Pre-Destroy"));
     }
 
 

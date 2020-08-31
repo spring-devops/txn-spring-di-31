@@ -2,7 +2,6 @@ package testapps.springframework.txnspringdi31.controllers.injection;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import testapps.springframework.txnspringdi31.controllers.injection.ConstructorInjectedController;
 import testapps.springframework.txnspringdi31.services.greetingsexample.GreetingServiceImpl;
 
 class ConstructorInjectedControllerTest {
@@ -17,4 +16,5 @@ class ConstructorInjectedControllerTest {
     void getGreeting() {
         System.out.println("ConstructorInjectedControllerTest >>>> " + constructorInjectedController.getGreeting());
     }
+
 }

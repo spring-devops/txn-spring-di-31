@@ -1,8 +1,11 @@
 package testapps.springframework.txnspringdi31;
 
 import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.ComponentScan;
+import org.springframework.context.annotation.Configuration;
 import testapps.springframework.txnspringdi31.controllers.*;
 import testapps.springframework.txnspringdi31.controllers.injection.ConstructorInjectedController;
 import testapps.springframework.txnspringdi31.controllers.greetings.I18nController;
@@ -10,6 +13,10 @@ import testapps.springframework.txnspringdi31.controllers.injection.PropertyInje
 import testapps.springframework.txnspringdi31.controllers.injection.SetterInjectedController;
 import testapps.springframework.txnspringdi31.controllers.pets.PetController;
 
+//NOTE: These three commneted out annotations are equivalent to the uncommented one below
+//@Configuration
+//@EnableAutoConfiguration
+//@ComponentScan
 @SpringBootApplication
 public class TxnSpringDi31Application {
 
@@ -25,7 +32,6 @@ public class TxnSpringDi31Application {
 		I18nController i18nController = (I18nController) ctx.getBean("i18nController");
 		System.out.println("TxnSpringDi31Application >>>> " + i18nController.sayHello());
 
-/*
 		System.out.println("TxnSpringDi31Application >>>> ----------- Which Pet is the best?");
 		PetController petController = (PetController) ctx.getBean("petController");
 		System.out.println("TxnSpringDi31Application >>>> " + petController.whichPetIsTheBest());
@@ -41,7 +47,6 @@ public class TxnSpringDi31Application {
 		System.out.println("TxnSpringDi31Application >>>> ----------- Constructor ");
 		ConstructorInjectedController constructorInjectedController = (ConstructorInjectedController) ctx.getBean("constructorInjectedController");
 		System.out.println("TxnSpringDi31Application >>>> " + constructorInjectedController.getGreeting());
-*/
 
 	}
 
