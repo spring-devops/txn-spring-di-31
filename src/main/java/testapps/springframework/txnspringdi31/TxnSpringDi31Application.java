@@ -13,6 +13,7 @@ import testapps.springframework.txnspringdi31.controllers.injection.PropertyInje
 import testapps.springframework.txnspringdi31.controllers.injection.SetterInjectedController;
 import testapps.springframework.txnspringdi31.controllers.pets.PetController;
 import testapps.springframework.txnspringdi31.services.data.SimulatedDataModel;
+import testapps.springframework.txnspringdi31.services.data.SimulatedJmsBroker;
 
 //NOTE: These three commneted out annotations are equivalent to the uncommented one below
 //@Configuration
@@ -53,6 +54,11 @@ public class TxnSpringDi31Application {
 		//SimulatedDataModel dataModel = (SimulatedDataModel) ctx.getBean("simulatedDataModel") ;
 		SimulatedDataModel dataModel = (SimulatedDataModel) ctx.getBean(SimulatedDataModel.class) ;
 		System.out.println("TxnSpringDi31Application >>>> Data Model Value: " + dataModel.toString());
+
+		System.out.println("TxnSpringDi31Application >>>> ----------- Property Reader for JMS Property File");
+		//SimulatedDataModel dataModel = (SimulatedDataModel) ctx.getBean("simulatedDataModel") ;
+		SimulatedJmsBroker jmsBroker = (SimulatedJmsBroker) ctx.getBean(SimulatedJmsBroker.class) ;
+		System.out.println("TxnSpringDi31Application >>>> JMS Broker Value: " + jmsBroker.toString());
 
 	}
 
