@@ -12,6 +12,7 @@ import testapps.springframework.txnspringdi31.controllers.greetings.I18nControll
 import testapps.springframework.txnspringdi31.controllers.injection.PropertyInjectedController;
 import testapps.springframework.txnspringdi31.controllers.injection.SetterInjectedController;
 import testapps.springframework.txnspringdi31.controllers.pets.PetController;
+import testapps.springframework.txnspringdi31.services.data.SimulatedDataModel;
 
 //NOTE: These three commneted out annotations are equivalent to the uncommented one below
 //@Configuration
@@ -47,6 +48,11 @@ public class TxnSpringDi31Application {
 		System.out.println("TxnSpringDi31Application >>>> ----------- Constructor ");
 		ConstructorInjectedController constructorInjectedController = (ConstructorInjectedController) ctx.getBean("constructorInjectedController");
 		System.out.println("TxnSpringDi31Application >>>> " + constructorInjectedController.getGreeting());
+
+		System.out.println("TxnSpringDi31Application >>>> ----------- Property Reader from external file ");
+		//SimulatedDataModel dataModel = (SimulatedDataModel) ctx.getBean("simulatedDataModel") ;
+		SimulatedDataModel dataModel = (SimulatedDataModel) ctx.getBean(SimulatedDataModel.class) ;
+		System.out.println("TxnSpringDi31Application >>>> Username: " + dataModel.getUser());
 
 	}
 
