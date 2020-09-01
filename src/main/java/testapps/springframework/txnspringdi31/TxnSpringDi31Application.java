@@ -52,7 +52,7 @@ public class TxnSpringDi31Application {
 		System.out.println("TxnSpringDi31Application >>>> ----------- Property Reader from external file ");
 		//SimulatedDataModel dataModel = (SimulatedDataModel) ctx.getBean("simulatedDataModel") ;
 		SimulatedDataModel dataModel = (SimulatedDataModel) ctx.getBean(SimulatedDataModel.class) ;
-		System.out.println("TxnSpringDi31Application >>>> Username: " + dataModel.getUser());
+		System.out.println("TxnSpringDi31Application >>>> Data Model Value: " + dataModel.toString());
 
 	}
 

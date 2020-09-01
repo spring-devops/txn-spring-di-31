@@ -28,4 +28,13 @@ public class SimulatedDataModel {
     public void setUrl(String url) {
         this.url = url;
     }
+
+    @Override
+    public String toString() {
+        return "SimulatedDataModel{" +
+                "user='" + user + '\'' +
+                ", password='" + password + '\'' +
+                ", url='" + url + '\'' +
+                '}';
+    }
 }
