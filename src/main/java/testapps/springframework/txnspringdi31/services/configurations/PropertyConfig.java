@@ -1,17 +1,17 @@
 package testapps.springframework.txnspringdi31.services.configurations;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.PropertySource;
 import org.springframework.context.annotation.PropertySources;
 import org.springframework.context.support.PropertySourcesPlaceholderConfigurer;
 import org.springframework.core.env.Environment;
+import org.springframework.stereotype.Component;
 import testapps.springframework.txnspringdi31.services.data.SimulatedDataModel;
 import testapps.springframework.txnspringdi31.services.data.SimulatedJmsBroker;
 
-@Configuration
+@Component
 //@PropertySource("classpath:datasource.properties")
 //@PropertySource("classpath:jms.properties")
 //Alternate way:
@@ -19,46 +19,38 @@ import testapps.springframework.txnspringdi31.services.data.SimulatedJmsBroker;
         @PropertySource("classpath:datasource.properties"),
         @PropertySource("classpath:jms.properties")
 })
-public class PropertyConfig {
+public class PropertyConfig extends AbstractAppProperties{
 
     @Autowired
     Environment environment;
 
-    @Value("${txn-spring.username}")
-    String user;
+    private final SimulatedDataModel simulatedDataModel;
+    private final SimulatedJmsBroker simulatedJmsBroker;
 
-    @Value("${txn-spring.password}")
-    String password;
-
-    @Value("${txn-spring.url}")
-    String url;
-
-    @Value("${txn-spring.jms.username}")
-    String JmsUser;
-
-    @Value("${txn-spring.jms.password}")
-    String JmsPassword;
-
-    @Value("${txn-spring.jms.url}")
-    String JmsUrl;
-
-    @Bean
-    public SimulatedDataModel getDataModel() {
-        SimulatedDataModel model = new SimulatedDataModel();
-        //We will simulate a password from ENVIRONMENT instead of file:
-        //model.setPassword(password);
-        model.setPassword(environment.getProperty("PASSWORD"));
-        model.setUrl(url);
-        model.setUser(user);
-        return model;
+    public PropertyConfig(/*SimulatedDataModel simulatedDataModel, SimulatedJmsBroker simulatedJmsBroker*/) {
+/*
+        this.simulatedDataModel = simulatedDataModel;
+        this.simulatedJmsBroker = simulatedJmsBroker;
+*/
+        this.simulatedDataModel = new SimulatedDataModel();
+        this.simulatedJmsBroker = new SimulatedJmsBroker();
     }
 
-    @Bean
-    public SimulatedJmsBroker getJmsBroker() {
-        SimulatedJmsBroker simulatedJmsBroker = new SimulatedJmsBroker();
-        simulatedJmsBroker.setJmsUserName(JmsUser);
-        simulatedJmsBroker.setJmsPassword(JmsPassword);
-        simulatedJmsBroker.setJmsUrl(JmsUrl);
+    @Bean (name="external-properties-data")
+    public SimulatedDataModel getSimulatedDataModel() {
+        //We will simulate a password from ENVIRONMENT instead of file:
+        //simulatedDataModel.setPassword(password);
+        simulatedDataModel.setPassword(environment.getProperty("PASSWORD"));
+        simulatedDataModel.setUrl(this.getUrl());
+        simulatedDataModel.setUser(this.getUser());
+        return simulatedDataModel;
+    }
+
+    @Bean (name="external-properties-jms")
+    public SimulatedJmsBroker getSimulatedJmsBroker() {
+        simulatedJmsBroker.setJmsUserName(this.getJmsUser());
+        simulatedJmsBroker.setJmsPassword(this.getJmsPassword());
+        simulatedJmsBroker.setJmsUrl(this.getJmsUrl());
         return simulatedJmsBroker;
     }
 

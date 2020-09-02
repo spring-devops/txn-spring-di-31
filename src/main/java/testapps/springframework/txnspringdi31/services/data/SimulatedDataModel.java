@@ -1,5 +1,10 @@
 package testapps.springframework.txnspringdi31.services.data;
 
+import org.springframework.context.annotation.Scope;
+import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Repository;
+
+
 public class SimulatedDataModel {
     private String user;
     private String password;

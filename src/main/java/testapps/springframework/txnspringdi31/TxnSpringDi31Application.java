@@ -1,5 +1,6 @@
 package testapps.springframework.txnspringdi31;
 
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -52,13 +53,16 @@ public class TxnSpringDi31Application {
 
 		System.out.println("TxnSpringDi31Application >>>> ----------- Property Reader from external file ");
 		//SimulatedDataModel dataModel = (SimulatedDataModel) ctx.getBean("simulatedDataModel") ;
-		SimulatedDataModel dataModel = (SimulatedDataModel) ctx.getBean(SimulatedDataModel.class) ;
-		System.out.println("TxnSpringDi31Application >>>> Data Model Value: " + dataModel.toString());
+		SimulatedDataModel dataModel = (SimulatedDataModel) ctx.getBean("external-properties-data", SimulatedDataModel.class) ;
+		System.out.println("TxnSpringDi31Application >>>> Data Model " + dataModel.hashCode() + ", Value: " + dataModel.toString());
+		SimulatedJmsBroker jmsBroker = (SimulatedJmsBroker) ctx.getBean("external-properties-jms", SimulatedJmsBroker.class) ;
+		System.out.println("TxnSpringDi31Application >>>> JMS Broker " + jmsBroker.hashCode() + ", Value: " + jmsBroker.toString());
 
-		System.out.println("TxnSpringDi31Application >>>> ----------- Property Reader for JMS Property File");
-		//SimulatedDataModel dataModel = (SimulatedDataModel) ctx.getBean("simulatedDataModel") ;
-		SimulatedJmsBroker jmsBroker = (SimulatedJmsBroker) ctx.getBean(SimulatedJmsBroker.class) ;
-		System.out.println("TxnSpringDi31Application >>>> JMS Broker Value: " + jmsBroker.toString());
+		System.out.println("TxnSpringDi31Application >>>> ----------- Property Reader from SpringBootProperties file ");
+		SimulatedDataModel dataModel1 = (SimulatedDataModel) ctx.getBean("spring-properties-data", SimulatedDataModel.class) ;
+		System.out.println("TxnSpringDi31Application >>>> Data Model " + dataModel1.hashCode() + ", Value: " + dataModel1.toString());
+		SimulatedJmsBroker jmsBroker1 = (SimulatedJmsBroker) ctx.getBean("spring-properties-jms", SimulatedJmsBroker.class) ;
+		System.out.println("TxnSpringDi31Application >>>> JMS Broker " + jmsBroker1.hashCode() + ", Value: " + jmsBroker1.toString());
 
 	}
 
