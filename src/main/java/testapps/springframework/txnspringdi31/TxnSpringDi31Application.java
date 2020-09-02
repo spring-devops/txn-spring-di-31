@@ -51,6 +51,8 @@ public class TxnSpringDi31Application {
 		ConstructorInjectedController constructorInjectedController = (ConstructorInjectedController) ctx.getBean("constructorInjectedController");
 		System.out.println("TxnSpringDi31Application >>>> " + constructorInjectedController.getGreeting());
 
+		//More documentation here: https://docs.spring.io/spring-boot/docs/2.1.9.RELEASE/reference/html/boot-features-external-config.html
+		// There is a specific order and superseding of the same property name in the above url
 		System.out.println("TxnSpringDi31Application >>>> ----------- Property Reader from external file ");
 		//SimulatedDataModel dataModel = (SimulatedDataModel) ctx.getBean("simulatedDataModel") ;
 		SimulatedDataModel dataModel = (SimulatedDataModel) ctx.getBean("external-properties-data", SimulatedDataModel.class) ;
