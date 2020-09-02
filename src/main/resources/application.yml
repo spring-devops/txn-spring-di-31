@@ -3,3 +3,10 @@ txn-spring:
     username: jmsUserName_SpringAppPropertiesYAML
     password: jmsPassword_SpringAppPropertiesYAML
     url: jmsUrl_SpringAppPropertiesYAML
+
+---
+spring:
+  profiles: de
+txn-spring:
+  jms:
+    username: jmsUserName_SpringAppPropertiesYAMLDE
